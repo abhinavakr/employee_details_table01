@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import "./login.css"
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [ user, setUser] = useState( {
@@ -16,14 +17,18 @@ const Login = () => {
     }
 
     return (
-        <div className="login"> 
-        {console.log(user)}
-        <h1>Login</h1>
-        <input type="text" name="email" value={user.email} onChange={handlechange} placeholder="enter your email"></input>
-        <input type="password" name="password" value={user.password} onChange={handlechange}placeholder="enter your password"></input>
-        <div className="button">Login</div>
-        <div>or</div>
-        <div className="button">Register</div>
+        <div className="login">
+        	{console.log(user)}
+       		<h1>Login</h1>
+        	<input type="text" name="email" value={user.email} onChange={handlechange} placeholder="Enter your email"></input>
+        	<input type="password" name="password" value={user.password} onChange={handlechange}placeholder="Enter your password"></input>
+        	<div className="button">
+				<Link to='/login'>Login</Link>
+			</div>
+        	<div>or</div>
+        	<div className="button">
+				<Link to='/register'>Register</Link>
+			</div>
         </div>
     )
 }
